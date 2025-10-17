@@ -32,7 +32,7 @@ public class HomeController : Controller
                 .AsNoTracking()
                 .ToList()
         };
-        return View();
+        return View(home);
     }
 
     public IActionResult Receita(int id)
@@ -44,7 +44,7 @@ public class HomeController : Controller
             .ThenInclude(i => i.Ingrediente)
             .AsNoTracking()
             .FirstOrDefault();
-        return View();
+        return View(receita);
     }
 
     public IActionResult Privacy()
